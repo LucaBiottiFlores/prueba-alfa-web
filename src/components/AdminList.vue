@@ -2,7 +2,7 @@
   <v-container>
     <div class="my-6 d-flex justify-center">
       <h2 class="my-2 text-center mx-1 text-h5 text-sm-h2">Administración</h2>
- 
+
       <section class="my-auto">
         <v-dialog v-model="dialog" persistent max-width="600px">
           <template v-slot:activator="{ on, attrs }">
@@ -17,7 +17,6 @@
             <v-card-text>
               <v-container>
                 <v-form ref="form" v-model="valid" lazy-validation>
-
                   <v-text-field
                     v-model="name"
                     :counter="40"
@@ -40,7 +39,7 @@
                     required
                     type="number"
                   ></v-text-field>
-      
+
                   <v-text-field
                     v-model="enrolled"
                     :rules="enrolledRules"
@@ -48,13 +47,13 @@
                     required
                     type="number"
                   ></v-text-field>
-     
+
                   <v-text-field
                     v-model="duration"
                     label="Duración del curso"
                     required
                   ></v-text-field>
-    
+
                   <v-text-field
                     v-model="cost"
                     :rules="costRules"
@@ -62,13 +61,13 @@
                     required
                     type="number"
                   ></v-text-field>
-     
+
                   <v-text-field
                     v-model="code"
                     label="Código curso"
                     required
                   ></v-text-field>
-  
+
                   <v-textarea
                     outlined
                     label="Descripción del curso"
@@ -296,15 +295,15 @@ export default {
         {
           text: 'Curso',
           align: 'start',
-          value: 'nombre'
+          value: 'name'
         },
-        { text: 'Cupos', value: 'cupos' },
-        { text: 'Inscritos', value: 'inscritos' },
-        { text: 'Duración', value: 'duracion' },
-        { text: 'Costo', value: 'costo' },
-        { text: 'Terminado', value: 'estado' },
-        { text: 'Fecha', value: 'fecharegistro' },
-        { text: 'Acciones', value: 'acciones' }
+        { text: 'Cupos', value: 'room' },
+        { text: 'Inscritos', value: 'enrolled' },
+        { text: 'Duración', value: 'duration' },
+        { text: 'Costo', value: 'cost' },
+        { text: 'Terminado', value: 'status' },
+        { text: 'Fecha', value: 'registerDate' },
+        { text: 'Acciones', value: 'actions' }
       ]
     }
   },

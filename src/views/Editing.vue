@@ -5,7 +5,6 @@
     </h1>
     <div class="mt-10">
       <v-form ref="form" v-model="valid" lazy-validation>
-      
         <v-text-field
           v-model="name"
           :counter="20"
@@ -77,7 +76,13 @@
         ></v-switch>
 
         <v-container
-          class="mt-5 d-flex justify-center align-content-center flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row"
+          class="
+            mt-5
+            d-flex
+            justify-center
+            align-content-center
+            flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row
+          "
         >
           <v-btn
             :disabled="!valid"
@@ -121,7 +126,7 @@
 import Swal from 'sweetalert2'
 import { mapGetters } from 'vuex'
 export default {
-     name: 'Editing',
+  name: 'Editing',
   props: ['id'],
   computed: {
     ...mapGetters(['sendingCourses'])
@@ -146,9 +151,7 @@ export default {
         (v) =>
           (v && v.length >= 0 && /\d/gim.test(v) && v >= 0) ||
           'Solo se admiten números positivos',
-        (v) =>
-          v <= this.room ||
-          'No pueden haber más inscritos que cupos'
+        (v) => v <= this.room || 'No pueden haber más inscritos que cupos'
       ],
       duration: '',
       cost: 0,
@@ -247,6 +250,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -61,22 +61,20 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+//object abrevation
 router.beforeEach((to, from, next) => {
+  console.log({ from, to })
   let user = store.getters.sendingUser
   let requiredLogin = to.matched.some((res) => res.meta.requiredLogin)
+  console.log({ user, requiredLogin })
   if (requiredLogin) {
-    next({ name: 'Login' })
-    console.log(user)
-    console.log(requiredLogin)
-  } else if (user && !requiredLogin) {
-    next()
-    console.log(user)
-    console.log(requiredLogin)
+    if (user) {
+      next()
+    } else {
+      next('/login')
+    }
   } else {
     next()
-    console.log(user)
-    console.log(requiredLogin)
   }
 })
 
